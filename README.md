@@ -1,9 +1,9 @@
 # PEtab NMLE extension
 
-This is a draft for a PEtab NLME extension. It adds the following to the existing PEtab specification.
-
 > [!NOTE]  
 > An NLME extension will be most useful in conjunction with a [dosing](https://github.com/PEtab-dev/PEtab/issues/564) or [time-course](https://github.com/dilpath/petab_timecourse) extension.
+
+This is a draft for a PEtab NLME extension. It adds the following to the existing PEtab specification.
 
 ## Individual table
 
