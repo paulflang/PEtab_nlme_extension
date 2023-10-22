@@ -1,0 +1,2 @@
+observableId	observableFormula	noiseFormula	noiseDistribution
+obs_B	2*B+1	0.1+0.2B	normal
