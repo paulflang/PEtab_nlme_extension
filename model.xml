@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created by COPASI version 4.40 (Build 278) on 2023-10-22 23:31 with libSBML version 5.20.0. -->
+<!-- Created by COPASI version 4.40 (Build 278) on 2023-10-22 23:44 with libSBML version 5.20.0. -->
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:render="http://www.sbml.org/sbml/level3/version1/render/version1" level="3" version="1" layout:required="false" render:required="false">
   <model metaid="COPASI0" id="New_Model" name="New Model" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
     <annotation>
@@ -56,11 +56,11 @@
       <compartment metaid="COPASI1" id="compartment" name="compartment" spatialDimensions="3" size="1" units="volume" constant="true"/>
     </listOfCompartments>
     <listOfSpecies>
-      <species metaid="COPASI2" id="A" name="A" compartment="compartment" initialConcentration="9.99999999999998" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI2" id="A" name="A" compartment="compartment" initialConcentration="9.99999999999997" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species metaid="COPASI3" id="B" name="B" compartment="compartment" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species metaid="COPASI4" id="C" name="C" compartment="compartment" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species metaid="COPASI13" id="D" name="D" compartment="compartment" initialConcentration="0.999999999999999" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species metaid="COPASI14" id="E" name="E" compartment="compartment" initialConcentration="1" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI13" id="D" name="D" compartment="compartment" initialConcentration="0.999999999999998" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI14" id="E" name="E" compartment="compartment" initialConcentration="0.999999999999999" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter metaid="COPASI5" id="k1" name="k1" value="1" constant="true"/>
@@ -70,6 +70,7 @@
       <parameter metaid="COPASI15" id="k5" name="k5" value="1" constant="true"/>
       <parameter metaid="COPASI16" id="k6" name="k6" value="1" constant="true"/>
       <parameter metaid="COPASI17" id="k7" name="k7" value="1" constant="true"/>
+      <parameter metaid="COPASI21" id="k8" name="k8" value="0" constant="true"/>
     </listOfParameters>
     <listOfReactions>
       <reaction metaid="COPASI9" id="r1" name="r1" reversible="false" fast="false">
@@ -184,12 +185,30 @@
         <listOfReactants>
           <speciesReference species="E" stoichiometry="1" constant="true"/>
         </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D" stoichiometry="1" constant="true"/>
+        </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> compartment </ci>
               <ci> k7 </ci>
+              <ci> E </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI22" id="r8" name="r8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="E" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <ci> k8 </ci>
               <ci> E </ci>
             </apply>
           </math>
