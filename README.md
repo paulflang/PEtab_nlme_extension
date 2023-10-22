@@ -42,9 +42,9 @@ In addition to the existing descriptions of fixed effects, the NLME extension ad
 
    Defines how random effects are grouped together. Any column name from the individual table is allowed, except for covariate (i.e. numeric) columns.
 
-## Covariance table
+## Covariance tables
 
-This table is an addition to the existing PEtab format to describe the covariances of the random effects. Three formats are allowed
+These tables are an addition to the existing PEtab format to describe the covariances of the random effects. Each `groupType` for which covariances are estimated has its own table. Four formats are allowed
 
 - Matrix format
 
@@ -56,4 +56,8 @@ This table is an addition to the existing PEtab format to describe the covarianc
 
 - Single cell format
 
-  If the covariate table only contains a single cell, this cell must either contain the string `full` (to specify that all (co)variances are estimated) or `diagonal` (to speficy that only variances are estimated).
+  If the covariance table only contains a single cell, this cell must contain the string `full` to specify that all (co)variances are estimated.
+
+- No table
+
+If no table is provided, only the variances, but no covariances are estimated.

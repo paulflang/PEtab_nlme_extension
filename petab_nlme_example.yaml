@@ -14,4 +14,12 @@ problems:
   individual_files:
   - individuals.tsv
   covariance_files:
-  - covariances.tsv
+    covariance:
+      group: individual
+      locaion: covariance_individual.tsv
+    covariance:
+      group: tumorStage
+      location: covariance_tumorStage.tsv
+    covariance:
+      group: sex
+      location: covariance_sex.tsv
