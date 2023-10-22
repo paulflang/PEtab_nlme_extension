@@ -60,4 +60,4 @@ These tables are an addition to the existing PEtab format to describe the covari
 
 - No table
 
-If no table is provided, only the variances, but no covariances are estimated.
+  If no table is provided, only the variances, but no covariances are estimated.
