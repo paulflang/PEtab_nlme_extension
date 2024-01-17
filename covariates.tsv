@@ -1,0 +1,6 @@
+covariateId	covariateParameter	covariateFormula	covariateType	covariateScale	lowerBound	upperBound	nominalValue	estimate
+WT	k3	((WT/70)**WTeff)	categorical	log10	0.1	10	0.75	0
+SEX	k3	exclude	categorical	log10	0.1	10	1	0
+AGE	k3	fractional	categorical	log10	0.1	1	0.5	1
+EGF	k3	power	continuous	log10	0.1	10	1	1
+EGF	k5	((EGF/4.56)**EGFeffk5)	continuous	log10	0.1	10	1	1

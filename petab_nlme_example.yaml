@@ -13,6 +13,8 @@ problems:
   - observables.tsv
   individual_files:
   - individuals.tsv
+  covariate_files:
+  - covariates.tsv
   covariance_files:
     covariance:
       group: individual

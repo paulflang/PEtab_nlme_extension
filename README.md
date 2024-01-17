@@ -16,9 +16,6 @@ This table is an addition to the existing PEtab format. It introduces a classifi
 
    Further columns may be used to group individuals into different categories.
 
-- `${covariateId}` [NUMERIC, OPTIONAL]
-
-   Further columns may be used to define covariates (not yet used in a covariateFormula in the current draft).
 
 ## Parameter table
 
@@ -61,3 +58,69 @@ These tables are an addition to the existing PEtab format to describe the covari
 - No table
 
   If no table is provided, only the variances, but no covariances are estimated.
+  
+## Measurement table
+
+In addition to the existing descriptions of fixed effects, the NLME extension adds the following columns:
+
+- `$covariateId` one column per distinct covariate
+  
+## Covariate table
+
+This table describes the addition of covariate table in the PEtab NLME extension.
+
+### Detailed field description
+
+- `covariateId` [STRING]
+
+   ID of the covariate.
+
+- `covariateParameter` [STRING]
+
+   Defines the parameter where the covariate effect (COVEFF) is modelled. It must be a `parameterId` defined in the parameter table. The COVEFF would be multiplied with the `parameterId`.
+
+-  `covariateFormula` [STRING: 'exclude' or 'fractional' or 'power' or free text formula]
+
+   Covariate effect function as plain text formula expression. The user can define its own formula or can use predefined models: 'exclude' or 'fractional' or 'power'.
+   - 'exclude' --> Covariate not included on the parameter.
+   $\text{COVEFF}=1$
+
+   - 'fractional' --> Linear function. For categorical and continuous covariates.
+   
+   For continuous covariates:
+   $\text{COVEFF}= 1 + \theta_{cov} \times \left(\text{covariateId} - median(\text{covariateId})\right)$
+   
+   For categorical covariates:
+   
+   $\text{if }  covariateValue  ==  Most common; \quad  \text{COVEFF} = 1$
+   
+   $\text{else }  ; \quad \text{COVEFF} = ( 1 + \theta_{cov})$
+
+   - 'power' --> Power function. Continuous covariates only.
+   $\text{COVEFF}= {\left(\frac{\text{covariateId}}{median(\text{covariateId})}\right)}^{\theta_{cov}}$
+   
+   Note that free text formula is also allowed
+
+- `covariateType` [STRING]
+
+   Defines whether a covariate is categorical or numerical.
+
+- `covariateScale` [STRING: 'lin' or 'log' or 'log10']
+
+   Same use as in the parameter table.
+
+- `lowerBound` [NUMERICAL]
+
+   Same use as in the parameter table.
+   
+- `upperBound` [NUMERICAL]
+
+   Same use as in the parameter table.
+   
+- `nominalValue` [NUMERICAL]
+
+   Same use as in the parameter table.
+   
+- `estimate` [NUMERICAL: 0 or 1]
+
+   Same use as in the parameter table.
