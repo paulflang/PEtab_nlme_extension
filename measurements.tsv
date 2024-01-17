@@ -1,13 +1,13 @@
-observableId	simulationConditionId	individualId	measurement	time
-obs_B	high_dose	p1	9.4	1
-obs_B	high_dose	p1	1.5	10
-obs_B	low_dose	p1	1.8	1
-obs_B	low_dose	p1	1.06	10
-obs_B	high_dose	p2	9.6	1
-obs_B	high_dose	p2	1.52	10
-obs_B	low_dose	p2	2	1
-obs_B	low_dose	p2	1.08	10
-obs_B	high_dose	p3	9	1
-obs_B	high_dose	p3	1.4	10
-obs_B	low_dose	p3	1.6	1
-obs_B	low_dose	p3	1.04	10
+observableId	simulationConditionId	individualId	measurement	time	WT	SEX	AGE	EGF
+obs_B	high_dose	p1	9.4	1	55	1	43	2.34
+obs_B	high_dose	p1	1.5	10	55	1	43	3.56
+obs_B	low_dose	p1	1.8	1	55	1	43	0.48
+obs_B	low_dose	p1	1.06	10	70	1	43	0.47
+obs_B	high_dose	p2	9.6	1	70	1	45	5.46
+obs_B	high_dose	p2	1.52	10	70	1	45	6.7
+obs_B	low_dose	p2	2	1	70	1	45	0.55
+obs_B	low_dose	p2	1.08	10	70	1	45	0.56
+obs_B	high_dose	p3	9	1	63	2	47	4.76
+obs_B	high_dose	p3	1.4	10	63	2	47	5.9
+obs_B	low_dose	p3	1.6	1	63	2	47	0.34
+obs_B	low_dose	p3	1.04	10	63	2	47	0.37
