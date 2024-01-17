@@ -91,11 +91,11 @@ This table describes the addition of covariate table in the PEtab NLME extension
    $\text{COVEFF}= 1 + \theta_{cov} \times \left(\text{covariateId} - median(\text{covariateId})\right)$
    
    For categorical covariates:
-   $$\text{if} \; covariateValue \; == \; Most common \\ \text{COVEFF} = 1 \\
-   \text{if} \; covariateValue \; != \; Most common \\ \text{COVEFF} = ( 1 + \theta_{cov})$$
+   $\text{if} \; covariateValue \; == \; Most common; \;  \text{COVEFF} = 1 \\
+   \text{if} \; covariateValue \; != \; Most common; \; \text{COVEFF} = ( 1 + \theta_{cov})$
 
    - 'power' --> Power function. Continuous covariates only.
-   $$\text{COVEFF}= {\left(\frac{\text{covariateId}}{median(\text{covariateId})}\right)}^{\theta_{cov}}$$
+   $\text{COVEFF}= {\left(\frac{\text{covariateId}}{median(\text{covariateId})}\right)}^{\theta_{cov}}$
    
    Note that free text formula is also allowed
 
