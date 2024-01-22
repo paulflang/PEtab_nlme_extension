@@ -36,7 +36,7 @@ In addition to the existing descriptions of fixed effects in the parameter table
 
 - `randomEffectFormula` [STRING]
 
-   Random effect function as plain text formula expression. Must contain the `parameterId` and the `randomVariableId` and must not contain any other symbols (or should we allow that???).
+   Random effect function as plain text formula expression. Must contain the `parameterId` and the `randomVariableId`. May contain other `randomVariableId`s from other distributions. Must not contain any other symbols (or should we allow that???).
 
 -  `distributionType` [STRING: 'normal' or 'laplace', OPTIONAL]
 
