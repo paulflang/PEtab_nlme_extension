@@ -1,5 +1,6 @@
 format_version: 2.0.0
 parameter_file: parameters.tsv
+random_effect_file: random_effects.tsv
 problems:
 - condition_files:
   - conditions.tsv

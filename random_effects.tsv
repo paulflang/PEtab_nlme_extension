@@ -1,0 +1,8 @@
+randomVariableId	estimate	parameterId	randomEffectFormula	distributionType	groupType
+u1	1	k1	k1*exp(u1)	normal	individualId
+u2	1	k2	k2 + u2	normal	individualId
+u3	1	k3	k3 * u3	normal	individualId
+u4	1	k4	k4 + u4	laplace	tumorStage
+u5	1	k5	k5 + u5	laplace	tumorStage
+u6	1	k6	k6 + u6	laplace	tumorStage
+u7	1	k7	k7 + u7	normal	sex

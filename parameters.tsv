@@ -1,9 +1,9 @@
-parameterId	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters	randomVariableId	randomEffectFormula	distributionType	groupType
-k1	log10	0.1	10	1	1	laplace	0; 1	u1	k1*exp(u1)	normal	individualId
-k2	log10	0.1	10	1	1	laplace	0; 1	u2	k2 + u2	normal	individualId
-k3	log10	0.1	10	1	1	laplace	0; 1	u3	k3 * u3	normal	individualId
-k4	log10	0.1	10	1	1	laplace	0; 1	u4	k4 + u4	laplace	tumorStage
-k5	log10	0.1	10	1	1	laplace	0; 1	u5	k5 + u5	laplace	tumorStage
-k6	log10	0.1	10	1	1	laplace	0; 1	u6	k6 + u6	laplace	tumorStage
-k7	log10	0.1	10	1	1	laplace	0; 1	u7	k7 + u7	normal	sex
-k8	log10	0.1	10	1	1	laplace	0; 1				
+parameterId	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1	log10	0.1	10	1	1	laplace	0; 1
+k2	log10	0.1	10	1	1	laplace	0; 1
+k3	log10	0.1	10	1	1	laplace	0; 1
+k4	log10	0.1	10	1	1	laplace	0; 1
+k5	log10	0.1	10	1	1	laplace	0; 1
+k6	log10	0.1	10	1	1	laplace	0; 1
+k7	log10	0.1	10	1	1	laplace	0; 1
+k8	log10	0.1	10	1	1	laplace	0; 1

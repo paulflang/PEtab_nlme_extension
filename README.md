@@ -16,15 +16,23 @@ This table is an addition to the existing PEtab format. It introduces a classifi
 
    Further columns may be used to group individuals into different categories.
 
-## Parameter table
+## Random effect table
 
-In addition to the existing descriptions of fixed effects, the NLME extension adds the following columns to describe random effects.
+In addition to the existing descriptions of fixed effects in the parameter table, the NLME extension adds a random effect table to describe random effects.
 
 ### Detailed field description
 
 - `randomVariableId` [STRING]
 
-   ID of the random variable. If left empty, there is no random effect defined on the parameter of this row.
+   ID of the random variable.
+
+- `estimate` [0|1]
+
+   1 or 0, depending on, if the parameter is estimated (1) or set to zero (to shift a random effect away from zero, see `randomEffectFormula`).
+
+- `parameterId` [STRING]
+
+   ID of the associated fixed effect.
 
 - `randomEffectFormula` [STRING]
 
