@@ -7,7 +7,7 @@ This is a draft for a PEtab NLME extension. It adds the following to the existin
 
 ## Individual table
 
-This table is an addition to the existing PEtab format. It introduces a classification of individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to. Additionally, the individual table allows to speficy covariates. While covariates covariates could technically also be specified in the existing condition table, pharmacologists are used to specifying them along with the data pertaining to individuals. This specification also facilitates the use of covariates in more complex mathematical expressions (Elba, let's discuss).
+This table is an addition to the existing PEtab format. It introduces a classification of individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to.
 
 ### Detailed field description
 
@@ -15,10 +15,6 @@ This table is an addition to the existing PEtab format. It introduces a classifi
 - `${groupId}` [STRING, OPTIONAL]
 
    Further columns may be used to group individuals into different categories.
-
-- `${covariateId}` [NUMERIC, OPTIONAL]
-
-   Further columns may be used to define covariates (not yet used in a covariateFormula in the current draft).
 
 ## Parameter table
 
