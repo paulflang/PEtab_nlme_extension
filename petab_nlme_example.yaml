@@ -16,11 +16,11 @@ problems:
   - individuals.tsv
   covariance_files:
     covariance:
-      group: individual
-      locaion: covariance_individual.tsv
+      group: distributionA
+      locaion: distributionA.tsv
     covariance:
-      group: tumorStage
-      location: covariance_tumorStage.tsv
+      group: anotherDistribution
+      location: covariance_anotherDistribution.tsv
     covariance:
-      group: sex
-      location: covariance_sex.tsv
+      group: yetAnotherDistribution
+      location: covariance_yetAnotherDistribution.tsv

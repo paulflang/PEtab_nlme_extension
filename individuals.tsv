@@ -1,4 +1,4 @@
-individualId	tumorStage	sex	age
-p1	s1	f	60
-p2	s1	m	60
-p3	s2	m	70
+distributionA	anotherDistribution	yetAnotherDistribution
+patient1	stage1	blue
+patient2	stage1	brown
+patient3	stage2	brown
