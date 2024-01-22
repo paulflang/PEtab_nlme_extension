@@ -48,7 +48,7 @@ These tables are an addition to the existing PEtab format to describe the covari
 
 - Sparse matrix format
 
-  This format contains two columns, `randomEffect1` and `randomEffect2` to define sets (i.e. pairs) of random effects for which covariances shall be estimated. Variances are estimated for all random effects. No duplicate sets are allowed (e.g. if one row specifies `u1, u2`, there must not be a `u1, u1` row).
+  This format contains two columns, `randomEffect1` and `randomEffect2` to list pairs of random effects for which covariances shall be estimated. Variances are estimated for all random effects. No duplicate sets are allowed (e.g. if one row specifies `u1, u2`, there must not be a `u2, u1` row).
 
 - Single cell format
 
