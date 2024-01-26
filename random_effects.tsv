@@ -1,8 +1,8 @@
-randomVariableId	distributionId	estimate	parameterId	randomEffectFormula	distributionType
-u1	distributionA	1	k1	k1*exp(u1+u4)	normal
-u2	distributionA	1	k2	k2 + u2	normal
-u3	distributionA	1	k3	k3 * u3	normal
-u4	anotherDistribution	1	k1	k1*exp(u1+u4)	laplace
-u5	anotherDistribution	1	k5	k5 + u5	laplace
-u6	anotherDistribution	1	k6	k6 + u6	laplace
-u7	yetAnotherDistribution	1	k7	k7 + u7	normal
+randomVariableId	distributionId	estimate	parameterId	randomEffectFormula
+u1	distributionA	1	k1	k1*exp(u1+u4)
+u2	distributionA	1	k2	k2 + u2
+u3	distributionA	1	k3	k3 * u3
+u4	anotherDistribution	1	k1	k1*exp(u1+u4)
+u5	anotherDistribution	1	k5	k5 + u5
+u6	anotherDistribution	1	k6	k6 + u6
+u7	yetAnotherDistribution	1	k7	k7 + u7

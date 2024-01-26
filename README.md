@@ -5,15 +5,9 @@
 
 This is a draft for a PEtab NLME extension. It adds the following to the existing PEtab specification.
 
-## Distribution table
+## YAML configuration file
 
-This table is an addition to the existing PEtab format. It can be used to introduce a classification of e.g. individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to.
-
-### Detailed field description
-
-- `${distributionId}` [STRING, OPTIONAL]
-
-   Each column lists the possible values for the given distribution.
+In addition to existing attributes, this extension uses `covariance_files` to define distributions of random effects. Each distribution has a `distributionId`, `distributionType` (e.g. normal, laplace) and `covariance` (defined in a TSV file). Distributions have zero mean. The `randomEffectFormula` in the random effect table can be used to shift the location of the distribution.
 
 ## Random effect table
 
@@ -24,6 +18,10 @@ In addition to the existing descriptions of fixed effects in the parameter table
 - `randomVariableId` [STRING]
 
    ID of the random variable.
+
+- `distributionId` [STRING]
+
+   Specifies the Id of the distribution from which this random effect is drawn. Any Id from the distributions listed in the YAML configuration file is allowed.
 
 - `estimate` [0|1]
 
@@ -37,17 +35,9 @@ In addition to the existing descriptions of fixed effects in the parameter table
 
    Random effect function as plain text formula expression. Must contain the `parameterId` and the `randomVariableId`. May contain other `randomVariableId`s from other distributions. Must not contain any other symbols (or should we allow that???).
 
--  `distributionType` [STRING: 'normal' or 'laplace', OPTIONAL]
-
-   Assumed random effect distribution. Only normal and laplace distributions are currently allowed (but we could allow any term in some ontology for distributions). Defaults to normal. Distributions are assumed to be zero-centered. Covariances are defined in the covariance table.
-
-- `groupType` [STRING]
-
-   Defines how random effects are grouped together. Any column name from the individual table is allowed, except for covariate (i.e. numeric) columns.
-
 ## Covariance tables
 
-These tables are an addition to the existing PEtab format to describe the covariances of the random effects. Each `groupType` for which covariances are estimated has its own table. Four formats are allowed
+These tables are an addition to the existing PEtab format to describe the covariances of the distribtions from which the random effects are drawn. Each `distributionId` has its own table. Four formats are allowed
 
 - Matrix format
 
@@ -64,3 +54,7 @@ These tables are an addition to the existing PEtab format to describe the covari
 - No table
 
   If no table is provided, only the variances, but no covariances are estimated.
+
+## Measurement table
+
+In addition to existing collumns, the measurement table must contain every `distributionId` from the YAML configuration file as a column. Each data point (i.e. row) is assigned to one entity for each `distributionId`. This allows grouping of data points. As a simple example, the YAML configuration file defines just one `distributionId` that could be called `patient`. Rows that share the same entry in the `patient` column belong to the same patient. Therefore, they must share the same value for all random effects that are drawn from the `patient` distribution.
