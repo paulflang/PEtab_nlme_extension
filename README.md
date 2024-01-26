@@ -5,42 +5,39 @@
 
 This is a draft for a PEtab NLME extension. It adds the following to the existing PEtab specification.
 
-## Individual table
+## YAML configuration file
 
-This table is an addition to the existing PEtab format. It introduces a classification of individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to.
+In addition to existing attributes, this extension uses `covariance_files` to define distributions of random effects. Each distribution has a `distributionId`, `distributionType` (e.g. normal, laplace) and `covariance` (defined in a TSV file). Distributions have zero mean. The `randomEffectFormula` in the random effect table can be used to shift the location of the distribution.
 
-### Detailed field description
+## Random effect table
 
-- `individualId` [STRING]
-- `${groupId}` [STRING, OPTIONAL]
-
-   Further columns may be used to group individuals into different categories.
-
-## Parameter table
-
-In addition to the existing descriptions of fixed effects, the NLME extension adds the following columns to describe random effects.
+In addition to the existing descriptions of fixed effects in the parameter table, the NLME extension adds a random effect table to describe random effects.
 
 ### Detailed field description
 
 - `randomVariableId` [STRING]
 
-   ID of the random variable. If left empty, there is no random effect defined on the parameter of this row.
+   ID of the random variable.
+
+- `distributionId` [STRING]
+
+   Specifies the Id of the distribution from which this random effect is drawn. Any Id from the distributions listed in the YAML configuration file is allowed.
+
+- `estimate` [0|1]
+
+   1 or 0, depending on, if the parameter is estimated (1) or set to zero (to shift a random effect away from zero, see `randomEffectFormula`).
+
+- `parameterId` [STRING]
+
+   ID of the associated fixed effect.
 
 - `randomEffectFormula` [STRING]
 
-   Random effect function as plain text formula expression. Must contain the `parameterId` and the `randomVariableId` and must not contain any other symbols (or should we allow that???).
-
--  `distributionType` [STRING: 'normal' or 'laplace', OPTIONAL]
-
-   Assumed random effect distribution. Only normal and laplace distributions are currently allowed (but we could allow any term in some ontology for distributions). Defaults to normal. Distributions are assumed to be zero-centered. Covariances are defined in the covariance table.
-
-- `groupType` [STRING]
-
-   Defines how random effects are grouped together. Any column name from the individual table is allowed, except for covariate (i.e. numeric) columns.
+   Random effect function as plain text formula expression. Must contain the `parameterId` and the `randomVariableId`. May contain other `randomVariableId`s from other distributions. Must not contain any other symbols (or should we allow that???).
 
 ## Covariance tables
 
-These tables are an addition to the existing PEtab format to describe the covariances of the random effects. Each `groupType` for which covariances are estimated has its own table. Four formats are allowed
+These tables are an addition to the existing PEtab format to describe the covariances of the distribtions from which the random effects are drawn. Each `distributionId` has its own table. Four formats are allowed
 
 - Matrix format
 
@@ -57,3 +54,7 @@ These tables are an addition to the existing PEtab format to describe the covari
 - No table
 
   If no table is provided, only the variances, but no covariances are estimated.
+
+## Measurement table
+
+In addition to existing collumns, the measurement table must contain every `distributionId` from the YAML configuration file as a column. Each data point (i.e. row) is assigned to one entity for each `distributionId`. This allows grouping of data points. As a simple example, the YAML configuration file defines just one `distributionId` that could be called `patient`. Rows that share the same entry in the `patient` column belong to the same patient. Therefore, they must share the same value for all random effects that are drawn from the `patient` distribution.

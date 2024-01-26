@@ -1,5 +1,6 @@
 format_version: 2.0.0
 parameter_file: parameters.tsv
+random_effect_file: random_effects.tsv
 problems:
 - condition_files:
   - conditions.tsv
@@ -11,15 +12,16 @@ problems:
       location: model.xml
   observable_files:
   - observables.tsv
-  individual_files:
-  - individuals.tsv
   covariance_files:
-    covariance:
-      group: individual
-      locaion: covariance_individual.tsv
-    covariance:
-      group: tumorStage
-      location: covariance_tumorStage.tsv
-    covariance:
-      group: sex
-      location: covariance_sex.tsv
+    distribution:
+      distributionId: distributionA
+      distributionType: normal
+      covariance: distributionA.tsv
+    distribution:
+      distributionId: anotherDistribution
+      distributionType: lognormal
+      covariance: covariance_anotherDistribution.tsv
+    distribution:
+      distributionId: yetAnotherDistribution
+      distributionType: laplace
+      covariance: covariance_yetAnotherDistribution.tsv

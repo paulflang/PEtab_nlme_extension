@@ -1,13 +1,13 @@
-observableId	simulationConditionId	individualId	measurement	time
-obs_B	high_dose	p1	9.4	1
-obs_B	high_dose	p1	1.5	10
-obs_B	low_dose	p1	1.8	1
-obs_B	low_dose	p1	1.06	10
-obs_B	high_dose	p2	9.6	1
-obs_B	high_dose	p2	1.52	10
-obs_B	low_dose	p2	2	1
-obs_B	low_dose	p2	1.08	10
-obs_B	high_dose	p3	9	1
-obs_B	high_dose	p3	1.4	10
-obs_B	low_dose	p3	1.6	1
-obs_B	low_dose	p3	1.04	10
+observableId	simulationConditionId	distributionA	anotherDistribution	yetAnotherDistribution	measurement	time
+obs_B	high_dose	patient1	stage1	blue	9.4	1
+obs_B	high_dose	patient1	stage1	blue	1.5	10
+obs_B	low_dose	patient1	stage1	blue	1.8	1
+obs_B	low_dose	patient1	stage1	blue	1.06	10
+obs_B	high_dose	patient2	stage1	brown	9.6	1
+obs_B	high_dose	patient2	stage1	brown	1.52	10
+obs_B	low_dose	patient2	stage1	brown	2	1
+obs_B	low_dose	patient2	stage1	brown	1.08	10
+obs_B	high_dose	patient3	stage2	brown	9	1
+obs_B	high_dose	patient3	stage2	brown	1.4	10
+obs_B	low_dose	patient3	stage2	brown	1.6	1
+obs_B	low_dose	patient3	stage2	brown	1.04	10
