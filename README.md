@@ -5,16 +5,15 @@
 
 This is a draft for a PEtab NLME extension. It adds the following to the existing PEtab specification.
 
-## Individual table
+## Distribution table
 
-This table is an addition to the existing PEtab format. It introduces a classification of individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to.
+This table is an addition to the existing PEtab format. It can be used to introduce a classification of e.g. individuals (most fine grained grouping) into several (more coarse grained) groups. Random effects can be specific to each individual or to the groups they belong to.
 
 ### Detailed field description
 
-- `individualId` [STRING]
-- `${groupId}` [STRING, OPTIONAL]
+- `${distributionId}` [STRING, OPTIONAL]
 
-   Further columns may be used to group individuals into different categories.
+   Each column lists the possible values for the given distribution.
 
 ## Random effect table
 

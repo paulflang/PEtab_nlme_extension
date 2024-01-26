@@ -12,15 +12,15 @@ problems:
       location: model.xml
   observable_files:
   - observables.tsv
-  individual_files:
-  - individuals.tsv
+  distribution_files:
+  - distributions.tsv
   covariance_files:
-    covariance:
-      group: distributionA
-      locaion: distributionA.tsv
-    covariance:
-      group: anotherDistribution
+    distribution:
+      distributionId: distributionA
+      location: distributionA.tsv
+    distribution:
+      distributionId: anotherDistribution
       location: covariance_anotherDistribution.tsv
-    covariance:
-      group: yetAnotherDistribution
+    distribution:
+      distributionId: yetAnotherDistribution
       location: covariance_yetAnotherDistribution.tsv
